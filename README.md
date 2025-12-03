@@ -11,8 +11,10 @@ In the past five years, I focused on:
 * 🧮 Large-scale sparse matrix solving & numerical optimization
 * 📘 Constraint satisfaction problem modeling
 * 🧵 Parallel computing (OpenMP / multi-threaded optimization)
+* 🎛️ GPU-accelerated computing (CUDA kernels / parallel numerical routines)
 * 📐 Complex physical system modeling & finite element simulation
-* ⚙️ Designing performant C++ algorithmic components
+* ⚙️ Designing high-performance C++ algorithmic components
+
 
 Now I’m pivoting into **Zero-Knowledge Proof (ZKP)** engineering — combining my strong numerical background with cutting-edge cryptography & blockchain technologies.
 
