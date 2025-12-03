@@ -1,7 +1,10 @@
 # zkp-learning-journey
 
-A structural engineer turned zero-knowledge proof developer.  
-Documenting my journey from FEA algorithms to ZK circuits,  
-targeting remote roles in US/EU/SG/HK blockchain teams.
+I am a finite element algorithm developer pivoting to zero-knowledge proof engineering.
+With 5 years of experience solving complex constraint systems in FEA,
+I'm now applying those skills to ZK circuit design and optimization.
 
-#zkp #zero-knowledge #blockchain #career-transition
+🎯 Target: Remote ZK Engineer roles in US/EU/SG/HK blockchain teams
+📚 This repository: Daily learning logs, circuit implementations, and project portfolio
+
+#zkp #zero-knowledge #blockchain #career-transition #zeroknowledgeproofs
