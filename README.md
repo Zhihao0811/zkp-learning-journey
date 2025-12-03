@@ -94,7 +94,7 @@ Implement classical circuits:
 
 ### **4. Systems & Optimization (My Strength Area)**
 
-Focus on parts where your FEM background gives you *advantage*:
+I focus on areas where my FEM background gives me an *advantage*:
 
 * Parallel proving
 * Sparse constraint matrices
