@@ -1,6 +1,6 @@
                ┌──────────────────────────────────────────┐
                │                 Circom                   │
-               │     (A DSL for constructing ZK circuits) │
+               │    (A DSL for constructing ZK circuits)  │
                └──────────────────────────────────────────┘
                                   │
         ┌─────────────────────────┼─────────────────────────┐
@@ -44,7 +44,7 @@
        ┌──────────────────────────────────────────────────────┐
        │                     R1CS System                      │
        │         (Rank-1 Constraint System matrices)          │
-       │   A, B, C matrices → sparse structure → FEM          │
+       │      A, B, C matrices → sparse structure → FEM       │
        └──────────────────────────────────────────────────────┘
                         │
                         ▼
