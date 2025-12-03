@@ -90,8 +90,8 @@
                                │ Output: witness.json    │
                                └───────┬─────────┬───────┘
                                        │         │
-                 ┌─────────────────────┘         └─────────────────────┐
-                 ▼                                               ▼
+                  ┌────────────────────┘         └───────────────────┐
+                  ▼                                                  ▼
         ┌───────────────────┐                            ┌───────────────────┐
         │ Multi-thread CPU  │                            │ GPU / CUDA Kernels│
         │ Signal Eval / FFT │                            │ FFT / MSM / Poly  │
@@ -100,23 +100,23 @@
                   └──── Backflow Optimization ────┬────────────────┘
                                                   ▼
                                ┌─────────────────────────┐
-                               │        R1CS Layer       │
+                               │       R1CS Layer        │
                                │ Sparse Matrices: A/B/C  │
                                │ Field Ops / Constraint  │
                                │ Optimization / Folding  │
                                └─────────────┬───────────┘
                                              │ R1CS + witness → Prover
                                              ▼
-                               ┌─────────────────────────┐
-                               │       Prover Pipeline    │
+                               ┌──────────────────────────┐
+                               │      Prover Pipeline     │
                                │ CRS / Trusted Setup      │
                                │ Proving Key / Verif Key  │
                                │ Generate Proof           │
                                │ Verify Proof             │
                                └───────┬─────────┬────────┘
                                        │         │
-                 ┌─────────────────────┘         └─────────────────────┐
-                 ▼                                               ▼
+                 ┌─────────────────────┘         └─────────────────┐
+                 ▼                                                 ▼
         ┌──────────────────┐                             ┌──────────────────┐
         │ Multi-thread CPU │                             │ GPU / FFT / MSM  │
         │ Proof Generation │                             │ Polynomial Ops   │
