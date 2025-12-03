@@ -6,33 +6,33 @@
         ┌─────────────────────────┼─────────────────────────┐
         │                         │                         │
         ▼                         ▼                         ▼
-┌────────────────┐      ┌────────────────────┐    ┌───────────────────────┐
-│ Circom Language│      │ Circuit Structure  │    │   Cryptographic Base  │
-└────────────────┘      └────────────────────┘    └───────────────────────┘
+┌─────────────────┐      ┌───────────────────┐      ┌────────────────────┐
+│ Circom Language │      │ Circuit Structure │      │ Cryptographic Base │
+└─────────────────┘      └───────────────────┘      └────────────────────┘
         │                         │                         │
         │                         │                         │
         ▼                         ▼                         ▼
-┌───────────────┐       ┌──────────────────┐       ┌────────────────────┐
-│ Syntax & Types│       │ Templates & Mods │       │ Field Arithmetic   │
-│ - signals     │       │ - template       │       │ - prime fields     │
-│ - inputs/outs │       │ - components     │       │ - mod arithmetic   │
-│ - arrays      │       │ - parameters     │       │ - EC ops intro     │
-└───────────────┘       └──────────────────┘       └────────────────────┘
+┌────────────────┐       ┌──────────────────┐       ┌────────────────────┐
+│ Syntax & Types │       │ Templates & Mods │       │ Field Arithmetic   │
+│ - signals      │       │ - template       │       │ - prime fields     │
+│ - inputs/outs  │       │ - components     │       │ - mod arithmetic   │
+│ - arrays       │       │ - parameters     │       │ - EC ops intro     │
+└────────────────┘       └──────────────────┘       └────────────────────┘
         │                         │                         │
         ▼                         ▼                         ▼
-┌───────────────┐       ┌──────────────────┐       ┌────────────────────────┐
-│  Constraints  │       │  Composition     │       │  Hash & Merkle         │
-│ - polynomial  │       │ - loops          │       │ - Poseidon / MiMC      │
-│ - linear eqns │       │ - arrays         │       │ - Merkle tree logic    │
-│ - R1CS logic  │       │ - modular design │       │ - Signature circuits   │
-└───────────────┘       └──────────────────┘       └────────────────────────┘
+┌───────────────┐       ┌──────────────────┐       ┌───────────────────────┐
+│  Constraints  │       │  Composition     │       │  Hash & Merkle        │
+│ - polynomial  │       │ - loops          │       │ - Poseidon / MiMC     │
+│ - linear eqns │       │ - arrays         │       │ - Merkle tree logic   │
+│ - R1CS logic  │       │ - modular design │       │ - Signature circuits  │
+└───────────────┘       └──────────────────┘       └───────────────────────┘
         │                         │                         │
         └───────────────┬─────────┴───────────────┬─────────┘
                         ▼                         ▼
-           ┌─────────────────────┐       ┌───────────────────────┐
-           │   Circom Compiler   │       │  Standard Libraries   │
-           │   (circom → R1CS)   │       │      circomlib        │
-           └─────────────────────┘       └───────────────────────┘
+           ┌─────────────────────┐       ┌──────────────────────┐
+           │   Circom Compiler   │       │  Standard Libraries  │
+           │   (circom → R1CS)   │       │      circomlib       │
+           └─────────────────────┘       └──────────────────────┘
                         │                         │
                         ▼                         ▼
        ┌──────────────────────────────────────────────────────┐
