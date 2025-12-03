@@ -44,7 +44,7 @@
        ┌──────────────────────────────────────────────────────┐
        │                     R1CS System                      │
        │         (Rank-1 Constraint System matrices)          │
-       │   A, B, C matrices → sparse structure → FEM类似      │
+       │   A, B, C matrices → sparse structure → FEM          │
        └──────────────────────────────────────────────────────┘
                         │
                         ▼
