@@ -154,5 +154,4 @@ And eventually join a top-tier ZK team (e.g., Scroll, StarkWare, zkSync, Risc0, 
 
 If you'd like to discuss ZK, algorithm engineering, or collaborate:
 
-**Email:**
-**GitHub:**
+**Email:** 1100456a@gmail.com
