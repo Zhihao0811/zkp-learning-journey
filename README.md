@@ -1,9 +1,10 @@
 # zkp-learning-journey
 
 I am a finite element algorithm developer pivoting to zero-knowledge proof engineering.
+
 With 5 years of expertise in:
 • Large-scale sparse matrix solving and optimization
-• Numerical methods for constraint satisfaction problems  
+• Numerical methods for constraint satisfaction problems
 • Parallel computation and performance optimization
 • Mathematical modeling of complex physical systems
 
