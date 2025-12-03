@@ -29,10 +29,10 @@
         │                         │                         │
         └───────────────┬─────────┴───────────────┬─────────┘
                         ▼                         ▼
-           ┌─────────────────────┐       ┌────────────────────────┐
-           │  Circom Compiler    │       │   Standard Libraries   │
-           │   (circom → R1CS)   │       │     circomlib          │
-           └─────────────────────┘       └────────────────────────┘
+           ┌─────────────────────┐       ┌───────────────────────┐
+           │   Circom Compiler   │       │  Standard Libraries   │
+           │   (circom → R1CS)   │       │      circomlib        │
+           └─────────────────────┘       └───────────────────────┘
                         │                         │
                         ▼                         ▼
        ┌──────────────────────────────────────────────────────┐
@@ -59,7 +59,7 @@
                         │
                         ▼
        ┌──────────────────────────────────────────────────────┐
-       │              On-chain / Off-chain Integration        │
+       │           On-chain / Off-chain Integration           │
        │  - Solidity verifier                                 │
        │  - circuit inputs on-chain                           │
        │  - proof verification                                │
