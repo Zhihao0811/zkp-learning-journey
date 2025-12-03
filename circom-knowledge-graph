@@ -64,3 +64,76 @@
        │  - circuit inputs on-chain                           │
        │  - proof verification                                │
        └──────────────────────────────────────────────────────┘
+
+
+
+                               ┌─────────────────────────┐
+                               │        Circom DSL       │
+                               │ Signals / Templates /   │
+                               │ Constraints / Loops     │
+                               └─────────────┬───────────┘
+                                             │ Signals / Templates / Loops
+                                             ▼
+                               ┌─────────────────────────┐
+                               │       Compiler          │
+                               │  .circom → .r1cs        │
+                               │  Constraint Flattening  │
+                               │  WASM Gen for Witness   │
+                               └─────────────┬───────────┘
+                                             │ Emits
+                                             ▼
+                               ┌─────────────────────────┐
+                               │    Witness Generation   │
+                               │ Map Private Inputs      │
+                               │ Evaluate Signals &      │
+                               │ Constraints             │
+                               │ Output: witness.json    │
+                               └───────┬─────────┬───────┘
+                                       │         │
+                 ┌─────────────────────┘         └─────────────────────┐
+                 ▼                                               ▼
+        ┌───────────────────┐                            ┌───────────────────┐
+        │ Multi-thread CPU  │                            │ GPU / CUDA Kernels│
+        │ Signal Eval / FFT │                            │ FFT / MSM / Poly  │
+        └─────────┬─────────┘                            └─────────┬─────────┘
+                  │                                                │
+                  └──── Backflow Optimization ────┬────────────────┘
+                                                  ▼
+                               ┌─────────────────────────┐
+                               │        R1CS Layer       │
+                               │ Sparse Matrices: A/B/C  │
+                               │ Field Ops / Constraint  │
+                               │ Optimization / Folding  │
+                               └─────────────┬───────────┘
+                                             │ R1CS + witness → Prover
+                                             ▼
+                               ┌─────────────────────────┐
+                               │       Prover Pipeline    │
+                               │ CRS / Trusted Setup      │
+                               │ Proving Key / Verif Key  │
+                               │ Generate Proof           │
+                               │ Verify Proof             │
+                               └───────┬─────────┬────────┘
+                                       │         │
+                 ┌─────────────────────┘         └─────────────────────┐
+                 ▼                                               ▼
+        ┌──────────────────┐                             ┌──────────────────┐
+        │ Multi-thread CPU │                             │ GPU / FFT / MSM  │
+        │ Proof Generation │                             │ Polynomial Ops   │
+        └─────────┬────────┘                             └─────────┬────────┘
+                  │                                                │
+                  └─── Backflow Optimization ─────┬────────────────┘
+                                                  ▼
+                                               [Proof]
+
+          ┌─────────────────────────────┐                        ┌─────────────────────────────────┐
+          │ Performance Optimization    │                        │ Cryptography Components         │
+          │ - CPU / GPU Parallelism     │                        │ - Finite Fields / EC Ops        │
+          │ - Memory / Cache Layout     │                        │ - Hash Functions Poseidon/MiMC  │
+          │ - Constraint Folding / Reuse│                        │ - Merkle Tree / Signature       │
+          └───────┬─────────────────────┘                        └─────────────┬───────────────────┘
+                  │                                                            │
+                  └──────── Feedback Loop (supports R1CS & Prover) ────────────┘
+                        (Accelerates Witness & Prover, Supports R1CS)
+
+
