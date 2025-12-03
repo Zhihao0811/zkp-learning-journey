@@ -5,9 +5,9 @@
 ### 1.1 Algebraic Structure Definition
 The finite field $\mathbb{F}_p$ is a complete algebraic structure defined from the perspective of **commutative rings** and **field theory**:
 
-```
-\mathbb{F}_p = ({0,1,2,...,p-1}, +_p, ·_p)
-```
+$$
+\mathbb{F}_p = (\{0,1,2,\ldots,p-1\}, +_p, \cdot_p)
+$$
 
 where the operations satisfy:
 1. **Abelian Group**: $(\mathbb{F}_p, +_p)$ is a cyclic group of order $p$
@@ -41,24 +41,19 @@ As an FEA algorithm engineer, I'm familiar with **Sobolev spaces** $H^1(Ω)$, wh
 ### 2.2 Correspondence from a Discretization Perspective
 In the Finite Element Method (FEM), partial differential equations are discretized:
 
-```
--∇ · (c∇u) = f in Ω
-```
+$$-\nabla \cdot (c\nabla u) = f \ \text{in} \ \Omega$$
 
 Discretized to a linear system:
-```
-K u = f
-```
+
+$$\mathbf{K} \mathbf{u} = \mathbf{f}$$
 
 In finite fields, polynomial equations:
-```
-f(x) = 0 in \mathbb{F}_p[x]
-```
+
+$$f(x) = 0 \in \mathbb{F}_p[x]$$
 
 Can also be expressed as a linear constraint system (R1CS):
-```
-A · z ∘ B · z = C · z
-```
+
+$$(\mathbf{A} \cdot \mathbf{z}) \circ (\mathbf{B} \cdot \mathbf{z}) = \mathbf{C} \cdot \mathbf{z}$$
 
 **Key Insight**: The FEM stiffness matrix $K$ and ZK's R1CS matrices $A,B,C$ are both **large sparse matrices** with shared optimization strategies.
 
@@ -68,14 +63,12 @@ A · z ∘ B · z = C · z
 
 ### 3.1 Extended Euclidean Algorithm for Inverses
 Finding $a^{-1}$ in $\mathbb{F}_p$ is equivalent to solving:
-```
-a x ≡ 1 (mod p)
-```
+
+$$a x \equiv 1 \pmod{p}$$
 
 This corresponds to **Bézout's identity**:
-```
-a x + p y = 1
-```
+
+$$a x + p y = 1 \quad (x, y \in \mathbb{Z})$$
 
 **Python Implementation**:
 ```python
@@ -106,15 +99,18 @@ print(f"Verification: {a} * {inv_a} mod {p} = {(a * inv_a) % p}")
 ### 3.2 Chinese Remainder Theorem (CRT) in Finite Fields
 Let $p, q$ be distinct primes. $\mathbb{F}_{pq}$ is not a field, but can be decomposed using CRT:
 
-```
-\mathbb{Z}_{pq} ≅ \mathbb{Z}_p × \mathbb{Z}_q
-```
+$$\mathbb{Z}_{pq} \cong \mathbb{Z}_p \times \mathbb{Z}_q$$
+
+$$\mathbb{Z}/pq\mathbb{Z} \cong (\mathbb{Z}/p\mathbb{Z}) \times (\mathbb{Z}/q\mathbb{Z})$$
 
 **Example**: In $\mathbb{Z}_{77}$ (note: not a field), solve the system:
-```
-x ≡ 2 (mod 7)
-x ≡ 3 (mod 11)
-```
+
+$$
+\begin{cases}
+x \equiv 2 \pmod{7} \\
+x \equiv 3 \pmod{11}
+\end{cases}
+$$
 
 Solution:
 1. Find $M_1 = 11$, $M_1^{-1} ≡ 2 \pmod{7}$
@@ -126,27 +122,36 @@ Solution:
 ### 3.3 Discrete Fourier Transform (DFT) over Finite Fields
 Let $ω$ be a primitive $n$-th root of unity in $\mathbb{F}_p$ ($ω^n ≡ 1$). DFT is defined as:
 
-```
-DFT(a)_k = Σ_{j=0}^{n-1} a_j ω^{jk} mod p
-```
+$$
+\widehat{a}_k = \sum_{j=0}^{n-1} a_j \cdot \omega^{jk} \ (\text{mod} \ p)
+\quad \text{for} \ k = 0,1,\ldots,n-1
+$$
 
 Inverse transform:
-```
-IDFT(A)_j = n^{-1} Σ_{k=0}^{n-1} A_k ω^{-jk} mod p
-```
+
+$$
+a_j = n^{-1} \sum_{k=0}^{n-1} \widehat{a}_k \cdot \omega^{-jk} \ (\text{mod} \ p)
+\quad \text{for} \ j = 0,1,\ldots,n-1
+$$
 
 **Example**: In $\mathbb{F}_{17}$, take $ω = 3$ (since $3^8 ≡ 16 ≡ -1 \pmod{17}$), compute 4-point DFT of sequence $[1,2,3,4]$.
 
 Solution:
-```
-A_0 = 1·3^0 + 2·3^0 + 3·3^0 + 4·3^0 = 10
-A_1 = 1·3^0 + 2·3^1 + 3·3^2 + 4·3^3
-    = 1 + 6 + 27 + 108 ≡ 1 + 6 + 10 + 6 ≡ 6 (mod 17)
-A_2 = 1·3^0 + 2·3^2 + 3·3^4 + 4·3^6
-    = 1 + 2·9 + 3·13 + 4·15 ≡ 1 + 1 + 5 + 9 ≡ 16 (mod 17)
-A_3 = 1·3^0 + 2·3^3 + 3·3^6 + 4·3^9
-    = 1 + 2·10 + 3·15 + 4·11 ≡ 1 + 3 + 11 + 10 ≡ 8 (mod 17)
-```
+
+$$
+\begin{aligned}
+A_0 &= 1 \cdot 3^0 + 2 \cdot 3^0 + 3 \cdot 3^0 + 4 \cdot 3^0 = 10 \\
+A_1 &= 1 \cdot 3^0 + 2 \cdot 3^1 + 3 \cdot 3^2 + 4 \cdot 3^3 \\
+    &= 1 + 6 + 27 + 108 \\
+    &\equiv 1 + 6 + 10 + 6 \equiv 6 \ (\text{mod} \ 17) \\
+A_2 &= 1 \cdot 3^0 + 2 \cdot 3^2 + 3 \cdot 3^4 + 4 \cdot 3^6 \\
+    &= 1 + 2 \cdot 9 + 3 \cdot 13 + 4 \cdot 15 \\
+    &\equiv 1 + 1 + 5 + 9 \equiv 16 \ (\text{mod} \ 17) \\
+A_3 &= 1 \cdot 3^0 + 2 \cdot 3^3 + 3 \cdot 3^6 + 4 \cdot 3^9 \\
+    &= 1 + 2 \cdot 10 + 3 \cdot 15 + 4 \cdot 11 \\
+    &\equiv 1 + 3 + 11 + 10 \equiv 8 \ (\text{mod} \ 17)
+\end{aligned}
+$$
 
 **ZK Significance**: DFT is core to proof systems like PLONK for polynomial evaluation and commitments.
 
@@ -204,24 +209,40 @@ kG = scalar_mult(k, G, p)  # Compute 13G
 Given point set ${(x_i, y_i)}_{i=0}^{n-1} ⊂ \mathbb{F}_p^2$, there exists a unique polynomial $f(x)$ of degree less than $n$ satisfying $f(x_i) = y_i$.
 
 **Lagrange basis polynomials**:
-```
-ℓ_i(x) = ∏_{j≠i} (x - x_j)/(x_i - x_j)
-```
+
+$$
+\ell_i(x) = \prod_{j \neq i} \frac{x - x_j}{x_i - x_j}
+$$
+
+$$
+\ell_i(x) = \prod_{\substack{j=0 \\ j \neq i}}^{n-1} \frac{x - x_j}{x_i - x_j}
+$$
 
 **Example**: In $\mathbb{F}_{11}$, interpolate polynomial through points $(1,2), (2,4), (3,8)$.
 
 Solution:
-```
-ℓ_0(x) = (x-2)(x-3)/((1-2)(1-3)) = (x-2)(x-3)/2
-ℓ_1(x) = (x-1)(x-3)/((2-1)(2-3)) = -(x-1)(x-3)/1
-ℓ_2(x) = (x-1)(x-2)/((3-1)(3-2)) = (x-1)(x-2)/2
-f(x) = 2ℓ_0(x) + 4ℓ_1(x) + 8ℓ_2(x)
-```
+
+$$
+\begin{aligned}
+\ell_0(x) &= \frac{(x-2)(x-3)}{(1-2)(1-3)} = \frac{(x-2)(x-3)}{2} \\
+\ell_1(x) &= \frac{(x-1)(x-3)}{(2-1)(2-3)} = -\frac{(x-1)(x-3)}{1} \\
+\ell_2(x) &= \frac{(x-1)(x-2)}{(3-1)(3-2)} = \frac{(x-1)(x-2)}{2}
+\end{aligned}
+$$
+
+$$
+f(x) = 2\ell_0(x) + 4\ell_1(x) + 8\ell_2(x)
+$$
 
 Compute in $\mathbb{F}_{11}$ (note all operations modulo 11):
-```
-f(x) = 2·6(x-2)(x-3) - 4(x-1)(x-3) + 8·6(x-1)(x-2)
-```
+
+$$
+\begin{aligned}
+f(x) &= 2 \cdot 6(x-2)(x-3) - 4(x-1)(x-3) + 8 \cdot 6(x-1)(x-2) \\
+    &= 12(x-2)(x-3) - 4(x-1)(x-3) + 48(x-1)(x-2) \\
+    &\equiv 1(x-2)(x-3) + 7(x-1)(x-3) + 4(x-1)(x-2) \pmod{11}
+\end{aligned}
+$$
 
 **ZK Application**: This is the mathematical foundation for KZG commitments, PLONK arithmetization.
 
@@ -245,14 +266,23 @@ Linear maps $T: \mathbb{F}_p^n → \mathbb{F}_p^m$ correspond to $m × n$ matric
 
 ### 5.3 Analogy with Differential Equations over Finite Fields
 Consider "difference equations" over finite fields:
-```
-Δf(x) = f(x+1) - f(x) = g(x)
-```
+
+$$
+\Delta f(x) = f(x+1) - f(x) = g(x)
+$$
 
 This is a **cyclic difference equation** in $\mathbb{F}_p$. Existence and uniqueness of solutions guaranteed by the **fundamental theorem of discrete calculus**:
-```
-Σ_{x=0}^{p-1} Δf(x) = 0
-```
+
+$$
+\sum_{x=0}^{p-1} \Delta f(x) = 0
+$$
+
+
+or
+
+$$
+\sum_{x=0}^{p-1} [f(x+1) - f(x)] \equiv 0 \pmod{p}
+$$
 
 ---
 
