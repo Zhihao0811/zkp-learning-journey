@@ -50,12 +50,15 @@ This learning journey is about converting those strengths into a full ZKP skill 
 ### 📚 Core Publications
 - [Mapping Fundamental Constraints to R1CS: A Technical Reference](./Constraints%20to%20R1CS.md)  
   *Technical reference for implementing mathematical constraints in R1CS systems*
-  
-- [The Seven Fundamental Properties of Finite Fields and Their Profound Impact on Circuit Design](./Finite%20Field%20Arithmetic-3.md)  
-  *Exploring seven mathematical properties that dictate circuit design paradigms*
 
-- [Mapping Fundamental Constraints to R1CS: A Technical Reference](./Constraints%20to%20R1CS.md)  
-  *Technical reference for implementing mathematical constraints in R1CS systems*
+- [The Seven Fundamental Properties of Finite Fields and Their Profound Impact on Circuit Design](./Finite%20Field%20Arithmetic-3.md)  
+   *Original mathematical framework for rethinking circuit design*
+
+- [Circom Constraint System Architecture: Seven-Layer Abstraction Model](./Constraint%20System.md)  
+   *Original layered architecture theory for the Circom framework*
+  
+- [ZK-SNARK Development Challenges](./ZKSnark-ChallengAnalysis.md)  
+  *End-to-end risk assessment and mitigation framework*
 
 ---
 
