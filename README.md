@@ -45,6 +45,26 @@ This learning journey is about converting those strengths into a full ZKP skill 
 
 ---
 
+## 🔐 Intellectual Property
+
+### Copyright & Licensing
+All works presented here are original creations by **ZHANG ZHIHAO**.
+
+**Default Licenses:**
+- Technical Documentation: Creative Commons Attribution 4.0 (CC-BY-4.0)
+- Code Implementation: MIT License
+- Some works may have specific licenses, see individual documents for details
+
+**Terms of Use:**
+1. ✅ Permitted: Reading, sharing, citing, adapting
+2. ✅ Required: Clear attribution to original author (ZHANG ZHIHAO)
+3. ❌ Prohibited: Commercial use (unless explicit permission obtained)
+4. ❌ Prohibited: Removal of copyright notices
+
+*For licensing inquiries, please contact: [1100456a@gamil.com]*
+
+---
+
 ## 🎯 Featured Works
 
 ### 📚 Core Publications
