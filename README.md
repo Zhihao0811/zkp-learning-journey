@@ -45,6 +45,20 @@ This learning journey is about converting those strengths into a full ZKP skill 
 
 ---
 
+## 🎯 Featured Works
+
+### 📚 Core Publications
+- [Mapping Fundamental Constraints to R1CS: A Technical Reference](./Constraints%20to%20R1CS.md)  
+  *Technical reference for implementing mathematical constraints in R1CS systems*
+  
+- [The Seven Fundamental Properties of Finite Fields and Their Profound Impact on Circuit Design](./Finite%20Field%20Arithmetic-3.md)  
+  *Exploring seven mathematical properties that dictate circuit design paradigms*
+
+- [Mapping Fundamental Constraints to R1CS: A Technical Reference](./Constraints%20to%20R1CS.md)  
+  *Technical reference for implementing mathematical constraints in R1CS systems*
+
+---
+
 ## 📚 Learning Roadmap (Structured & Practical)
 
 ### **1. ZK Foundations**
