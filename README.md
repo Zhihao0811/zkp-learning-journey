@@ -61,7 +61,7 @@ All works presented here are original creations by **ZHANG ZHIHAO**.
 3. ❌ Prohibited: Commercial use (unless explicit permission obtained)
 4. ❌ Prohibited: Removal of copyright notices
 
-*For licensing inquiries, please contact: [1100456a@gamil.com]*
+*For licensing inquiries, please contact: [1100456a@gmail.com]*
 
 ---
 
