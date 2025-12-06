@@ -1,6 +1,12 @@
 # 📅 Work Journal Index
 
 ## December 2025
+- **2025-12-06**
+  - 密码学基础文章
+  - 证明基础文章
+  - 智能合约基础文章
+  - 基础约束电路清单汇总
+
 - **2025-12-05**
   - [Mapping Fundamental Constraints to R1CS: A Technical Reference](./Constraints%20to%20R1CS.md)
   - [Circom Constraint System Architecture: Seven-Layer Abstraction Model](./Constraint%20System.md)
